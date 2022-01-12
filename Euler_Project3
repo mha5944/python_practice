@@ -1,7 +1,11 @@
+'''
+    In this code the aim is to find the largest prime factor of a dsired number
+'''
+
 import numpy as np
 
 num = 600851475143
-
+prime = []
 
 def is_prime(input):
 
@@ -13,11 +17,9 @@ def is_prime(input):
             break
 
     return result
+    
+ ''' This function gives us an list of prime factors of the input number '''
 
-'''def save_prime(input):
-    prime.append(input)'''
-
-prime = []
 def factors(input):
 
     var = (input // 2) + 1
@@ -33,11 +35,12 @@ def factors(input):
             prime.append(input)
     return prime
 
-def lpn(input):
+''' Finding the largest prime factor of the input '''
+def lpf(input):
 
     prime_list = factors(input)
     unique_list = np.unique(prime_list)
     print(unique_list)
     return prime_list[-1]
 
-print(lpn(num))
+print(lpf(num))
